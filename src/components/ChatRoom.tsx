@@ -1,22 +1,23 @@
 import * as React from 'react';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { RootTabScreenProps } from '../types';
+import { RootTabScreenProps } from '../../types';
 
-export default function TabOneScreen() {
-  return (
+export default function ChatRoom(props: any) {7
+  console.log(props)
+  const user = props.chatRoom.users[1];
+  return ( 
     <View style={styles.container}>
-      <Image source={{uri: "https://pyxis.nymag.com/v1/imgs/fad/ce7/1176d95b8f4634e826f5534daa2273fc40-euphoria-sea-blob-lede.rsquare.w700.jpg"}} style={styles.image} />
+      <Image source={{uri: user.imageUri}} style={styles.image} />
       <View style={styles.badgeContainer}>
         <Text style={styles.badgeText}>4</Text>
       </View>
       <View style={styles.rightContainer}>
         <View style={styles.row}>
-          <Text style={styles.name}>Hunter</Text>
+          <Text style={styles.name}>{user.name}</Text>
           <Text style={styles.text}>11:11</Text>
         </View>
         <Text numberOfLines={1} style={styles.text}>Hello sweetie!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Text>
-
       </View> 
     </View>
   );
@@ -25,7 +26,9 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 20
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+
   },
   image: {
     height:60,
@@ -37,12 +40,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#3872E9',
     height: 25,
     width: 25,
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 13 ,
     position: 'absolute',
     left: 60,
-    top: 20
+    top: 10
   },
   badgeText:{
     color: 'white',
