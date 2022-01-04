@@ -17,7 +17,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "expo": "~43.0.0",
-    "expo-asset": "~8.4.3",
+    "expo-asset": "~8.4.4",
     "expo-constants": "~12.1.2",
     "expo-font": "~10.0.3",
     "expo-linking": "~2.4.2",
